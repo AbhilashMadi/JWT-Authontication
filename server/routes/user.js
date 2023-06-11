@@ -2,7 +2,15 @@ const express = require("express");
 const router = express.Router();
 const User = require("../models/user");
 const jwt = require("jsonwebtoken");
-const bcrypt = require("bcrypt")
+const bcrypt = require("bcrypt");
+const verifyAuth = require("../middleware/verifyAuth");
+
+// Verify access
+router.get('/', verifyAuth, async (req, res) => {
+    const profile = await User.findById(req.user._id);
+
+    res.send(profile);
+})
 
 // Register User
 router.post("/", async (req, res, next) => {

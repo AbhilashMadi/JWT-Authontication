@@ -19,9 +19,9 @@ app.use(morgan('dev'));
 app.use("/api/user", userRoutes);
 app.use("/api/auth", authRoutes);
 
-app.use((error,request,response,next) => {
+app.use((error, request, response, next) => {
     console.error(error);
-    response.status(500).json({error: 'Internal server error.'})
+    response.status(500).json({ error: 'Internal server error.' })
 })
 
 app.listen(PORT, () => {
