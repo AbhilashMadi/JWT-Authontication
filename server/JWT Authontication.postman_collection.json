@@ -1,0 +1,61 @@
+{
+	"info": {
+		"_postman_id": "29692a17-fea3-4b82-ba20-d30ec19b34f8",
+		"name": "JWT Authontication",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "26741166"
+	},
+	"item": [
+		{
+			"name": "Sign In",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"testing01\",\r\n    \"email\": \"testing01@gmail.com\",\r\n    \"password\": \"12345678\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/api/user"
+			},
+			"response": []
+		},
+		{
+			"name": "Verify User",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-auth-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDg1NzFkNGE0YWZkZDRjOWQwNDAzOTYiLCJpYXQiOjE2ODY0NzEwNzIsImV4cCI6MTY4NjQ3NDY3Mn0.8DoDQQ0iCb5Bt7WCWyNY7IAq_AMDF9OrTHXSGzH0zh8",
+						"type": "text"
+					}
+				],
+				"url": "http://localhost:3000/api/user"
+			},
+			"response": []
+		},
+		{
+			"name": "Log In",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"testing01@gmail.com\",\r\n    \"password\": \"12345678\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/api/auth"
+			},
+			"response": []
+		}
+	]
+}
